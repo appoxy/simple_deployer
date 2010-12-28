@@ -3,7 +3,7 @@ Simple_deployr allows to use SimpleDeployr.com from the command line
 
 This library wraps the REST API for managing and deploying Rails apps to the
 SimpleDeployr.  It can be called as a Ruby library, or invoked from the
-command line.  Code push and pull is done through Amzon S3.
+command line.  Code push and pull is done through Amazon S3.
 
 For more about SimpleDeployr see <http://simpledeployr.com>.
 
@@ -36,7 +36,7 @@ List of available commands
 
 Sample workflow
 
-	1) create project - sd project.create
-	2) launch server -  sd project.launch_server   (you can omit pr_id parameter - by default it’s current project) id
+	1) create project with sources from current folder - sd project.create 
+	2) launch server -  sd project.launch_server   (you can omit pr_id parameter - by default it is id of project you created on first step)
 	3) Deploy latest code from current folder - sd project.deploy_folder
 	4) Terminate server - sd server.terminate server_id  where server_id you can get from step 2
