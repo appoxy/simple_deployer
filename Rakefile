@@ -11,7 +11,7 @@ begin
 		gemspec.executables = "sd"
         gemspec.add_dependency 'aws'		
         gemspec.add_dependency 'zip'
-		gemspec.add_dependency 'appoxy_api'
+		gemspec.add_dependency 'appoxy_rails'
 		gemspec.add_development_dependency "rake"
     end
 rescue LoadError

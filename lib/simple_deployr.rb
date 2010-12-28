@@ -1,6 +1,6 @@
 require 'simple_deployr/client'
 require 'simple_deployr/config'
-require 'appoxy_api'
+require 'appoxy_rails'
 module SimpleDeployr
 
     class << self
