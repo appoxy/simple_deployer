@@ -12,6 +12,7 @@ module SimpleDeployr
             self.config = config
             super("http://www.simpledeployr.com/api/", config.access_key, config.secret_key, options)
             self.host = self.config.host if self.config && self.config.host
+            self.version = "0.2"
         end
 
 
