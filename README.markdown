@@ -1,17 +1,17 @@
-Simple_deployr allows to use SimpleDeployr.com from the command line
+Simple_deployer allows to use Simpledeployer.com from the command line
 ========================================================
 
 This library wraps the REST API for managing and deploying Rails apps to the
-SimpleDeployr.  It can be called as a Ruby library, or invoked from the
+Simpledeployer.  It can be called as a Ruby library, or invoked from the
 command line.  Code push and pull is done through Amazon S3.
 
-For more about SimpleDeployr see <http://simpledeployr.com>.
+For more about Simpledeployer see <http://simpledeployer.com>.
 
 
 Setup
 -----
 
-	1. install SD gem  - sudo gem install simple_deployr
+	1. install SD gem  - sudo gem install simple_deployer
 	2. type sd in command line
 
 List of available commands

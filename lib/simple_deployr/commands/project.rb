@@ -1,4 +1,4 @@
-module SimpleDeployr::Command
+module SimpleDeployer::Command
 
     class Project < CommandsBase
 

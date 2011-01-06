@@ -1,16 +1,16 @@
-require 'simple_deployr/client'
-require 'simple_deployr/config'
+require 'simple_deployer/client'
+require 'simple_deployer/config'
 require 'appoxy_rails'
-module SimpleDeployr
+module SimpleDeployer
 
     class << self
         attr_accessor :config,
                       :service
 
         def configure()
-            SimpleDeployr.config ||= Config.new
+            SimpleDeployer.config ||= Config.new
             yield(config)
-            SimpleDeployr.service = Service.new(config.access_key, config.secret_key, :config=>config)
+            SimpleDeployer.service = Service.new(config.access_key, config.secret_key, :config=>config)
         end
     end    
 end

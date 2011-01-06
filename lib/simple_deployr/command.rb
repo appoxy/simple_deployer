@@ -1,13 +1,13 @@
-require 'simple_deployr/commands/base'
+require 'simple_deployer/commands/base'
 Dir["#{File.dirname(__FILE__)}/commands/*.rb"].each { |c| require c }
-module SimpleDeployr
+module SimpleDeployer
     module Command
         class << self
             def run(command, args)
                 config = Config.new()
                 config.read()
                 begin
-                    service = SimpleDeployr::Service.new(config) #authorization should be there
+                    service = SimpleDeployer::Service.new(config) #authorization should be there
                     klass, method = parse(command)
                     runner = klass.new(args, service)
                     runner.send(method)
@@ -23,7 +23,7 @@ module SimpleDeployr
             def parse(command)
                 begin
                     parts = command.split(".")
-                    return eval("SimpleDeployr::Command::#{parts[0].capitalize}"), parts[1] ? parts[1].to_sym : :main
+                    return eval("SimpleDeployer::Command::#{parts[0].capitalize}"), parts[1] ? parts[1].to_sym : :main
                 end
             end
         end

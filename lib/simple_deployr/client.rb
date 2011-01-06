@@ -1,6 +1,6 @@
 require 'aws'
 require 'appoxy_rails'
-module SimpleDeployr
+module SimpleDeployer
 
     class Service < Appoxy::Api::Client
 
@@ -8,9 +8,9 @@ module SimpleDeployr
 
 
         def initialize(config, options={})
-            puts 'Starting SimpleDeployr...'
+            puts 'Starting SimpleDeployer...'
             self.config = config
-            super("http://www.simpledeployr.com/api/", config.access_key, config.secret_key, options)
+            super("http://www.simpledeployer.com/api/", config.access_key, config.secret_key, options)
             self.host = self.config.host if self.config && self.config.host
             self.version = "0.2"
         end

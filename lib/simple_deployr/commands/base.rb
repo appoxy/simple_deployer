@@ -1,4 +1,4 @@
-module SimpleDeployr::Command
+module SimpleDeployer::Command
     class CommandsBase
         def initialize(args, service)
             @args = args

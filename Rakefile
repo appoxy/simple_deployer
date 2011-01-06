@@ -1,9 +1,9 @@
 begin
     require 'jeweler'
     Jeweler::Tasks.new do |gemspec|
-        gemspec.name = "simple_deployr"
-        gemspec.summary = "Appoxy simple_deployr Gem"
-        gemspec.description = "Appoxy simple_deployr Gem"
+        gemspec.name = "simple_deployer"
+        gemspec.summary = "Appoxy simple_deployer Gem"
+        gemspec.description = "Appoxy simple_deployer Gem"
         gemspec.email = "roman@appoxy.com"
         gemspec.homepage = "http://www.appoxy.com"
 		gemspec.files =  FileList["[A-Z]*", "lib/**/*","bin/sd"]
