@@ -31,7 +31,8 @@ Gem::Specification.new do |s|
     "lib/simple_deployr/commands/project.rb",
     "lib/simple_deployr/commands/projects.rb",
     "lib/simple_deployr/commands/server.rb",
-    "lib/simple_deployr/config.rb"
+    "lib/simple_deployr/config.rb",
+    "simple_deployer.gemspec"
   ]
   s.homepage = %q{http://www.simpledeployer.com}
   s.require_paths = ["lib"]
