@@ -12,6 +12,7 @@ begin
     gemspec.add_dependency 'aws'
     gemspec.add_dependency 'zip'
     gemspec.add_dependency 'appoxy_rails'
+    gemspec.add_dependency 'simple_record'
     gemspec.add_development_dependency "rake"
   end
   Jeweler::GemcutterTasks.new
