@@ -17,7 +17,7 @@ module SimpleDeployer
 
 
         def project_info(project_id)
-            project = get("project/#{project_id}")
+            project = get("projects/#{project_id}")
         end
 
 
