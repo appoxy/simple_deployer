@@ -19,14 +19,31 @@ module SimpleDeployer
             end
         end
 
+        def aws_access_key
+          get_aws_keys if !@aws_access_key
+          @aws_access_key
+        end
+
+        def aws_secret_key
+          get_aws_keys if !@aws_secret_key
+          @aws_secret_key
+        end
+
+        def get_aws_keys
+          print "AWS Access Key: "
+          @aws_access_key = gets.strip
+          print "AWS Secret Key: "
+          @aws_secret_key = gets.strip
+        end
 
         def s3_bucket
-            return s3.bucket(s3_bucket_name, true)
+            get_aws_keys
+            s3.bucket(s3_bucket_name, true)
         end
 
 
         def s3
-            Aws::S3.new(aws_access_key, aws_secret_key, {:connection_mode => :per_request})
+            Aws::S3.new(self.aws_access_key, self.aws_secret_key, {:connection_mode => :per_request})
         end
 
 
@@ -41,7 +58,7 @@ module SimpleDeployer
 
 
         def save_config
-            write_to_file({"access_key"=>self.access_key, "secret_key"=>self.secret_key, "aws_access_key"=>self.aws_access_key, "aws_secret_key"=>self.aws_secret_key, "project_id"=>self.project_id})
+            write_to_file({"access_key"=>self.access_key, "secret_key"=>self.secret_key, "project_id"=>self.project_id})
         end
 
 
@@ -63,19 +80,13 @@ module SimpleDeployer
             access_key = gets.strip
             print "Secret Key: "
             secret_key = gets.strip
-            print "AWS Access Key: "
-            aws_access_key = gets.strip
-            print "AWS Secret Key: "
-            aws_secret_key = gets.strip
-            return {"access_key"=>access_key, "secret_key"=>secret_key, "aws_access_key"=>aws_access_key, "aws_secret_key"=>aws_secret_key}
+            {"access_key"=>access_key, "secret_key"=>secret_key}
         end
 
 
         def parse(params={})
             self.access_key = params["access_key"]
             self.secret_key=params["secret_key"]
-            self.aws_access_key=params["aws_access_key"]
-            self.aws_secret_key=params["aws_secret_key"]
             self.project_id=params["project_id"] if params["project_id"]
         end
     end

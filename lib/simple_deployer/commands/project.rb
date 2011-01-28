@@ -20,6 +20,7 @@ module SimpleDeployer::Command
             upload(file)
             p "creating project"
             pr_id = @service.create_project(File.basename(file, '.*') + "_project", File.basename(file), @service.config.aws_access_key, @service.config.aws_secret_key)
+            p "Saving config"
             @service.config.project_id = pr_id
             @service.config.save_config
             p "Project created, project id saved as default"

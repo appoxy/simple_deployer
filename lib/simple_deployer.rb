@@ -1,6 +1,5 @@
 require 'simple_deployer/client'
 require 'simple_deployer/config'
-require 'appoxy_rails'
 module SimpleDeployer
 
     class << self
@@ -12,5 +11,5 @@ module SimpleDeployer
             yield(config)
             SimpleDeployer.service = Service.new(config.access_key, config.secret_key, :config=>config)
         end
-    end    
+    end
 end

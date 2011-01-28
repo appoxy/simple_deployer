@@ -1,5 +1,5 @@
 require 'aws'
-require 'appoxy_rails'
+require 'appoxy_api'
 module SimpleDeployer
 
     class Service < Appoxy::Api::Client
